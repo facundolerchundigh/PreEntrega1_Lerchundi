@@ -1,14 +1,44 @@
 let savedName = "Facundo";
 let ingreso = false;
 
-//ingreso
+
 function solicitarNombreUsuario(intentosRestantes) {
     return prompt("Ingrese su nombre de usuario, solo tiene " + intentosRestantes + " intentos");
 }
 
+
 function mostrarOpcion() {
     return prompt("Escoja el número de la consulta que desea realizar: \n1- Obtener un turno \n2- Conocer costos de estudios o laboratorio \n3- Contactarse con nosotros \n4- Salir \n");
 }
+
+
+function obtenerTurnoMedico(medico) {
+    let turno = prompt("Escoja el día y horario en el que desea asistir a su consulta con el " + medico.nombre + ":\n1- " + medico.dias[0] + "\n2- " + medico.dias[1]);
+
+    if (turno === "1") {
+        alert("Usted ha reservado su turno con el " + medico.nombre + " para el día " + medico.dias[0]);
+    } else if (turno === "2") {
+        alert("Usted ha reservado su turno con el " + medico.nombre + " para el día " + medico.dias[1]);
+    } else {
+        alert("Opción no válida");
+    }
+}
+
+
+function calcularCostoEstudio(estudio, costo) {
+    let prepaga = prompt("El costo de " + estudio + " es de " + costo + " dólares por persona. ¿Cuenta con algún prestador de medicina prepaga?\n1- Sí\n2- No");
+
+    if (prepaga === "1") {
+        let descuento = costo * 0.1;
+        let costoConDescuento = costo - descuento;
+        alert("El coste de cada " + estudio + " es de " + costoConDescuento + " dólares.\n(Usted obtuvo un descuento del 10% por contar con un prestador de medicina prepaga)");
+    } else if (prepaga === "2") {
+        alert("Al no contar con un prestador de medicina prepaga, el valor no obtiene descuento y sigue siendo de " + costo + " dólares por cada " + estudio + ".");
+    } else {
+        alert("Opción no válida");
+    }
+}
+
 
 for (let i = 2; i >= 0; i--) {
     let userName = solicitarNombreUsuario(i + 1);
@@ -21,6 +51,7 @@ for (let i = 2; i >= 0; i--) {
         alert(userName + " no es un paciente asociado, le quedan " + i + " intentos");
     }
 }
+
 
 if (ingreso) {
     let opcion;
