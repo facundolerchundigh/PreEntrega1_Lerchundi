@@ -55,6 +55,23 @@ const estudios = [
 ];
 
 
+// Mostrar medicos y estudios en consola
+console.log("Médicos disponibles:");
+medicos.forEach(medico => {
+    console.log("Nombre: " + medico.nombre);
+    console.log("Días y horarios:");
+    medico.dias.forEach(dia => {
+        console.log("- " + dia);
+    });
+});
+
+console.log("\nEstudios disponibles:");
+estudios.forEach(estudio => {
+    console.log("Nombre: " + estudio.nombre);
+    console.log("Costo: $" + estudio.costo);
+});
+
+
 for (let i = 2; i >= 0; i--) {
     let userName = solicitarNombreUsuario(i + 1);
 
