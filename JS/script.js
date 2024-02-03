@@ -40,6 +40,15 @@ function calcularCostoEstudio(estudio, costo) {
 }
 
 
+const medicos = [
+    { nombre: "Doctor Lionel Messi", dias: ["Martes a las 16:30hs", "Miércoles a las 14:45hs"] },
+    { nombre: "Doctor Diego Armando Maradona", dias: ["Lunes a las 14:25hs", "Viernes a las 10:15hs"] },
+    { nombre: "Doctor Juan Roman Riquelme", dias: ["Jueves a las 10hs", "Sábado a las 11:15hs"] },
+    { nombre: "Doctor Dibu Martinez", dias: ["Martes a las 18hs", "Jueves a las 17:30hs"] }
+];
+
+
+
 for (let i = 2; i >= 0; i--) {
     let userName = solicitarNombreUsuario(i + 1);
 
