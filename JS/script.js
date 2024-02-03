@@ -48,6 +48,12 @@ const medicos = [
 ];
 
 
+const estudios = [
+    { nombre: "Tomografía", costo: 500 },
+    { nombre: "Radiografía", costo: 350 },
+    { nombre: "Extracción de sangre", costo: 150 }
+];
+
 
 for (let i = 2; i >= 0; i--) {
     let userName = solicitarNombreUsuario(i + 1);
